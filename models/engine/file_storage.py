@@ -44,8 +44,8 @@ class FileStorage:
             obj: given object
         """
         if obj:
-            key = "{}.{}".format(type(obj).__name__, obj.id)
-	self.__objects[key] = obj
+		key = "{}.{}".format(type(obj).__name__, obj.id)
+		self.__objects[key] = obj
 
     def save(self):
         """serialize the file path to JSON file path
