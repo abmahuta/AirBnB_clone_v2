@@ -26,12 +26,44 @@ class FileStorage:
         """Returns a dictionary of models currently in storage"""
         if cls is None:
             return self.__objects
+<<<<<<< HEAD
         else:
             filtered_dict = {}
             for key, value in self.__objects.items():
                 if type(value) is cls:
                     filtered_dict[key] = value
             return filtered_dict
+=======
+
+    def new(self, obj):
+        """sets __object to given obj
+        Args:
+            obj: given object
+        """
+        if obj:
+		key = "{}.{}".format(type(obj).__name__, obj.id)
+		self.__objects[key] = obj
+
+    def save(self):
+        """serialize the file path to JSON file path
+        """
+        my_dict = {}
+        for key, value in self.__objects.items():
+            my_dict[key] = value.to_dict()
+        with open(self.__file_path, 'w', encoding="UTF-8") as f:
+            json.dump(my_dict, f)
+
+    def reload(self):
+        """serialize the file path to JSON file path
+        """
+        try:
+            with open(self.__file_path, 'r', encoding="UTF-8") as f:
+                for key, value in (json.load(f)).items():
+                    value = eval(value["__class__"])(**value)
+                    self.__objects[key] = value
+        except FileNotFoundError:
+            pass
+>>>>>>> c7e399185453bc20a45c6df5d345805d2a961b8b
 
     def delete(self, obj=None):
         """Removes an object from the storage dictionary"""
