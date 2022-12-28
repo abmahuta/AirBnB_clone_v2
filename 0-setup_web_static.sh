@@ -1,4 +1,9 @@
+<<<<<<< HEAD
  Bash script that sets up your web servers for the deployment of web_static
+=======
+#!/usr/bin/env bash
+# A Bash script that sets up your web servers for the deployment of web_static
+>>>>>>> 1e5a3527ce161d64c896b333e0b57a25611f61b0
 
 apt-get update
 apt-get install -y nginx

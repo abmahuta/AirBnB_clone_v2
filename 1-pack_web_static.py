@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 python script that generates a .tgz archive from the
+=======
+#!/usr/bin/python3
+"""A fabric python script that generates a .tgz archive from the
+>>>>>>> 1e5a3527ce161d64c896b333e0b57a25611f61b0
 contents of the web_static folder
 """
 from datetime import datetime
