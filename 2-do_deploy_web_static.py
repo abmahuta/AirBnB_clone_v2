@@ -1,10 +1,10 @@
-#!/usr/bin/pythion3
+#!/usr/bin/python3
 """This python script distributes an archive to web servers,
 using the function do_deploy"""
 from os.path import exists
 from fabric.api import run, put, env
 
-env.hosts = ["35.153.78.254", "52.86.27.132"]
+env.hosts = ["35.153.78.254", "54.160.73.228"] 
 
 
 def do_deploy(archive_path):
